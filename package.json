@@ -1,0 +1,19 @@
+{
+  "name": "pong-js",
+  "version": "1.0.0",
+  "description": "A simple pong game made with Typescript",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tavaresl/pong-js.git"
+  },
+  "author": "Lucas Tavares (lucastavaresdarocha@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tavaresl/pong-js/issues"
+  },
+  "homepage": "https://github.com/tavaresl/pong-js#readme"
+}
