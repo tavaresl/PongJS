@@ -1,8 +1,11 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
+        "module"       : "system",
+        "target"       : "es5",
+        "rootDir"      : "script/src",
         "noImplicitAny": false,
-        "sourceMap": false
+        "sourceMap"    : true,
+        "outFile"      : "script/dist/game.js",
+        "sourceRoot"   : "script/src"
     }
 }

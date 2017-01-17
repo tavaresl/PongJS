@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tavaresl/pong-js/issues"
   },
-  "homepage": "https://github.com/tavaresl/pong-js#readme"
+  "homepage": "https://github.com/tavaresl/pong-js#readme",
+  "dependencies": {
+    "systemjs": "^0.19.42"
+  }
 }
