@@ -1,6 +1,7 @@
-"use strict";
+import { Drawable } from "../interfaces/Drawable"
+import { Game }     from '../Game'
 
-export class Paddle {
+export class Paddle implements Drawable {
 	private _width: number
 	private _height: number
 	private _color: string
@@ -30,7 +31,23 @@ export class Paddle {
 		return this._movingDown == true
 	}
 
-	move() : void {
+	moveUp() {
+		this._movingUp = true
+	}
+
+	moveDown() {
+		this._movingDown = true
+	}
+
+	stopMovingUp() {
+		this._movingUp = false
+	}
+
+	stopMovingDown() {
+		this._movingDown = false
+	}
+
+	translate() {
 		if (this.isMovingDown && !this.isMovingUp) {
 			this._posY += this._speed
 		}
@@ -39,10 +56,14 @@ export class Paddle {
 		}
 	}
 
-	draw(context) : void {
+	draw(context: CanvasRenderingContext2D) {
 		context.beginPath();
 		context.rect(this._posX, this._posY, this._width, this._height);
 		context.fillStyle = this._color;
 		context.fill();
+	}
+
+	init(game: Game) {
+		game.subscribe('draw', this.draw)
 	}
 }

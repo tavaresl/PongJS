@@ -1,14 +1,14 @@
-"use strict";
+import { Paddle }    from "Paddle"
+import { Playable }  from "../interfaces/Playable"
+import { Scoreable } from "../interfaces/Scoreable"
 
-import { Paddle } 	from "Paddle"
-import { Playable } from "../interfaces/Playable"
-
-export class Player extends Paddle implements Playable {
-	private _score : number
+export class Player implements Playable, Scoreable {
+	private _score: number
+	private _paddle: Paddle
 
 	constructor(width: number, height: number, color: string, posX: number,
 		posY: number, speed: number) {
-			super(width, height, color, posX, posY, speed)
+			this._paddle = new Paddle(width, height, color, posX, posY, speed)
 			this._score = 0
 	}
 
@@ -27,7 +27,7 @@ export class Player extends Paddle implements Playable {
 	listenToMoveKeys() : void {
 		document.addEventListener('keydown', key => {
 			if (key.keyCode == 38) {
-
+				this._paddle.moveUp()
 			}
 			else if (key.keyCode == 40) {
 				
