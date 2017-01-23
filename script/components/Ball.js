@@ -1,5 +1,5 @@
 class Ball extends Component {
-    constructor(color, radius, posX, posY, speedX, speedY, game) {
+    constructor(color, radius, posX, posY, speedX, speedY) {
         super()
         this._color  = color
         this._radius = radius
@@ -7,9 +7,10 @@ class Ball extends Component {
         this._posY   = posY
         this._speedX = speedX
         this._speedY = speedY
-
-        this._init(game)
     }
+
+    get posX() { return this._posX + 0 }
+    get posY() { return this._posY + 0 }
 
     _hasHitWall(context) {
         return this._posY >= context.canvas.height || this._posY <= 0
@@ -19,17 +20,17 @@ class Ball extends Component {
         return this._posX >= context.canvas.width || this._posX <= 0
     }
 
+    reflect(axis) {
+        if (axis == 'y') {
+            this._speedY = -this._speedY
+        }
+    }
+
     update(context) {
         this._posX += this._speedX;
         this._posY += this._speedY;
 
-        if (this._hasHitWall(context)) {
-            this._speedY = -this._speedY
-        }
-
-        if (this._hasHitGoal(context)) {
-            this._speedX = -this._speedX
-        }
+        this._notify('move')
     }
 
     draw(context) {
@@ -39,8 +40,5 @@ class Ball extends Component {
         context.fill()
     }
 
-    _init() {
-        game.subscribe('update', this.update.bind(this))
-        game.subscribe('draw', this.draw.bind(this))
-    }
+    init() {}
 }

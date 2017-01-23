@@ -1,30 +1,32 @@
-class Game extends Component {
+class Game {
     constructor(canvas) {
-        super()
         this._canvas = document.querySelector('#' + canvas)
-        this._context = this._canvas.getContext('2d')
-    }
-
-    get context() {
-        return this._context
+        this.context = this._canvas.getContext('2d')
     }
 
     _update() {
-        this._notify('update', this._context)
+        this._world.update(this.context)
         this._draw()
     }
 
     _draw() {
-        this._notify('draw', this._context)
+        this._world.draw(this.context)
         window.requestAnimationFrame(this._update.bind(this))
     }
 
     start() {
-        let world = new World('black', this)
-        let ball = new Ball('white', 4, this._canvas.width/2, this._canvas.height/2,
-                            5, 5, this)
-        let player = new Playable(10, 100, 'white', 0, this._canvas.height/2 - 50,
-                                    5, ball, this)
+        const WIDTH  = this._canvas.width
+        const HEIGHT = this._canvas.height
+
+        this._world  = new World('black', WIDTH, HEIGHT)
+
+        let ball   = new Ball('white', 4, WIDTH/2, HEIGHT/2, 5, 5)
+        let player = new Playable(10, 100, 'white', 0, HEIGHT/2 - 50, 5, ball)
+
+        this._world.player = player
+        this._world.ball   = ball
+        this._world.init()
+
         window.requestAnimationFrame(this._update.bind(this))
     }
 }

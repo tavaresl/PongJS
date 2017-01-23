@@ -1,12 +1,19 @@
 class Playable extends Player {
-	constructor(width, height, color, posX, posY, speed, ball, game) {
-		super(width, height, color, posX, posY, speed, game)
-		this._init(window.document, ball)
+	constructor(width, height, color, posX, posY, speed, ball) {
+		super(width, height, color, posX, posY, speed)
+		this.init(window.document)
 	}
 
-	_init(document, ball) {
+	update(context) {
+		this.paddle.update(context)
+	}
+
+	draw(context) {
+		this.paddle.draw(context)
+	}
+
+	init(document) {
 		document.addEventListener('keydown', key => {
-			console.log('churros', key.keyCode)
 			if (key.keyCode == 38 || key.keyCode == 87) {
 				this._paddle.moveUp()
 			}
@@ -21,12 +28,6 @@ class Playable extends Player {
 			}
 			else if (key.keyCode == 40 || key.keyCode == 83) {
 				this._paddle.stopMovingDown()
-			}
-		})
-
-		ball.subscribe('goalhit', evt => {
-			if (evt.target == 'enemy') {
-				this.scoreUp()
 			}
 		})
 	}
