@@ -11,9 +11,15 @@
 		</canvas>
 	</div>
 </body>
-<script src="node_modules/systemjs/dist/system.js"></script>
-<!--<script src="script/dist/game.js"></script>-->
+<script src="script/components/World.js"></script>
+<script src="script/components/Component.js"></script>
+<script src="script/components/Player.js"></script>
+<script src="script/components/Playable.js"></script>
+<script src="script/components/Ball.js"></script>
+<script src="script/components/Paddle.js"></script>
+<script src="script/Game.js"></script>
 <script>
-	SystemJS.import('script/dist/game.js');
+	var game = new Game('gameCanvas')
+	game.start()
 </script>
 </html>
