@@ -18,9 +18,9 @@ class Game {
 		const WIDTH  = this._canvas.width
 		const HEIGHT = this._canvas.height
 
-		let ball   = new Ball('white', 4, WIDTH/2, HEIGHT/2, -5, 5)
-		let player = new Playable(10, 100, 'white', 0, HEIGHT/2 - 50, 5)
-		let enemy  = new Playable(10, 100, 'white', WIDTH - 10, HEIGHT/2 -50, 5)
+		let ball   = new Ball('white', 4, WIDTH/2, HEIGHT/2, 5, 5)
+		let player = new LocalPlayer(10, 100, 'white', 0, HEIGHT/2 - 50, 5)
+		let enemy  = new EnemyPlayer(10, 100, 'white', WIDTH - 10, HEIGHT/2 -50, 5)
 
 		this._world        = new World('black', WIDTH, HEIGHT)
 		this._world.player = player

@@ -12,6 +12,7 @@ class Ball extends Component {
 
 	get posX()   { return this._posX + 0 }
 	get posY()   { return this._posY + 0 }
+	get speedX() { return this._speedX + 0 }
 	get radius() { return this._radius + 0 }
 
 	reflect(axis) {
@@ -27,7 +28,7 @@ class Ball extends Component {
 		this._posX = this._initialPos.x
 		this._posY = this._initialPos.y
 	}
- 
+
 	update(context) {
 		this._posX += this._speedX;
 		this._posY += this._speedY;

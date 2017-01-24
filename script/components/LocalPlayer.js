@@ -1,28 +1,25 @@
-class Playable extends Player {
-	constructor(width, height, color, posX, posY, speed, ball) {
+class LocalPlayer extends Player {
+	constructor(width, height, color, posX, posY, speed) {
 		super(width, height, color, posX, posY, speed)
 		this.init(window.document)
 	}
 
-	draw(context) 	{ this.paddle.draw(context) }
-	update(context) { this.paddle.update(context) }
-
 	init(document) {
 		document.addEventListener('keydown', key => {
 			if (key.keyCode == 38 || key.keyCode == 87) {
-				this._paddle.moveUp()
+				this.paddle.moveUp()
 			}
 			else if (key.keyCode == 40 || key.keyCode == 83) {
-				this._paddle.moveDown()
+				this.paddle.moveDown()
 			}
 		})
 
 		document.addEventListener('keyup', key => {
 			if (key.keyCode == 38 || key.keyCode == 87) {
-				this._paddle.stopMovingUp()
+				this.paddle.stopMovingUp()
 			}
 			else if (key.keyCode == 40 || key.keyCode == 83) {
-				this._paddle.stopMovingDown()
+				this.paddle.stopMovingDown()
 			}
 		})
 	}

@@ -31,7 +31,7 @@ class World {
 		else {
 			this._ball.reset()
 		}
-		
+
 		this._ball.reflect('x')
 	}
 
@@ -39,12 +39,21 @@ class World {
 		this._ball.update(context)
 		this._player.update(context)
 		this._enemy.update(context)
+
+		console.log('ball speed', this._ball.speedX)
+
+		if (this._ball.speedX > 0) {
+			this._enemy.chase(this._ball)
+		}
+		else {
+			this._enemy.stopChasing()
+		}
 	}
 
 	draw(context) {
 		context.fillStyle = this._color
 		context.fillRect(0, 0, context.canvas.width, context.canvas.height)
-		
+
 		this._ball.draw(context)
 		this._player.draw(context)
 		this._enemy.draw(context)
