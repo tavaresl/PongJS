@@ -4,13 +4,8 @@ class Playable extends Player {
 		this.init(window.document)
 	}
 
-	update(context) {
-		this.paddle.update(context)
-	}
-
-	draw(context) {
-		this.paddle.draw(context)
-	}
+	draw(context) 	{ this.paddle.draw(context) }
+	update(context) { this.paddle.update(context) }
 
 	init(document) {
 		document.addEventListener('keydown', key => {

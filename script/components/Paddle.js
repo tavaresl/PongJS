@@ -12,22 +12,15 @@ class Paddle {
 
 	get isMovingUp()   { return this._movingUp == true }
 	get isMovingDown() { return this._movingDown == true }
+	get width() 	   { return this._width + 0}
+	get height() 	   { return this._height + 0}
+	get posX() 		   { return this._posX + 0 }
+	get posY() 		   { return this._posY + 0 }
 
-	moveUp() {
-		this._movingUp = true
-	}
-
-	moveDown() {
-		this._movingDown = true
-	}
-
-	stopMovingUp() {
-		this._movingUp = false
-	}
-
-	stopMovingDown() {
-		this._movingDown = false
-	}
+	moveUp()		 { this._movingUp = true }
+	moveDown()		 { this._movingDown = true }
+	stopMovingUp() 	 { this._movingUp = false }
+	stopMovingDown() { this._movingDown = false }
 
 	update(context) {
 		if (this.isMovingDown && !this.isMovingUp) {
@@ -42,6 +35,4 @@ class Paddle {
 		context.fillStyle = this._color;
 		context.fillRect(this._posX, this._posY, this._width, this._height);
 	}
-
-	init() {}
 }

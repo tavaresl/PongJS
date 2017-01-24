@@ -16,13 +16,15 @@ class Player extends Component {
 		this._score += score
 	}
 
-	block(ball) {
-		if (ball.posY >= this._paddle.posY - 5 &&
-			ball.posY <= this._paddle.posY + this._paddle.height + 5 &&
-			ball.posX >= this._paddle.posX - 5 &&
-			ball.posX <= this._paddle.posX + this._paddle.width + 5) {
-				this._notify('block')
-			}
+	hasBlocked(ball) {
+		if (ball.posY >= this._paddle.posY - 5
+		&& ball.posY <= this._paddle.posY + this._paddle.height + 5 
+		&& ball.posX >= this._paddle.posX - 5 
+		&& ball.posX <= this._paddle.posX + this._paddle.width + 5) {
+			return true
+		}
+
+		return false
 	}
 
 	init() {}
