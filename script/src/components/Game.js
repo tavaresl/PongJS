@@ -1,4 +1,4 @@
-class Game {
+export class Game {
 	constructor(canvas) {
 		this._canvas = document.querySelector('#' + canvas)
 		this.context = this._canvas.getContext('2d')

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/main.js"],"names":["a"],"mappings":";;AAAA;;AAEA,IAAIA,IAAI,CAAR","file":"main.js","sourcesContent":["import { Game } from 'components/Game'\n\nvar a = 0\n"]}

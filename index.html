@@ -11,16 +11,11 @@
 		</canvas>
 	</div>
 </body>
-<script src="script/components/World.js"></script>
-<script src="script/components/Component.js"></script>
-<script src="script/components/Player.js"></script>
-<script src="script/components/LocalPlayer.js"></script>
-<script src="script/components/EnemyPlayer.js"></script>
-<script src="script/components/Ball.js"></script>
-<script src="script/components/Paddle.js"></script>
-<script src="script/Game.js"></script>
+<script src="node_modules/systemjs/dist/system.js"></script>
 <script>
-	var game = new Game('gameCanvas')
-	game.start()
+	System.defaultJSExtension = true;
+	System.import('./script/build/main').catch(function (err) {
+		console.log(err)
+	})
 </script>
 </html>
