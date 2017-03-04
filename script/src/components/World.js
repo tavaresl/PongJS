@@ -1,4 +1,4 @@
-class World {
+export class World {
 	constructor(color, width, height, game) {
 		this._color    = color
 		this._width    = width

@@ -1,4 +1,4 @@
-class Component {
+export class Component {
     constructor() {
         this._handlers = []
     }

@@ -1,4 +1,6 @@
-class LocalPlayer extends Player {
+import { Player } from './Player.js'
+
+export class LocalPlayer extends Player {
 	constructor(width, height, color, posX, posY, speed) {
 		super(width, height, color, posX, posY, speed)
 		this.init(window.document)

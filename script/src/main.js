@@ -1,3 +1,4 @@
-import { Game } from 'components/Game'
+import { Game } from './components/Game.js'
 
-var a = 0
+var game = new Game('gameCanvas')
+game.start()

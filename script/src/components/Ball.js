@@ -1,4 +1,6 @@
-class Ball extends Component {
+import { Component } from './Component.js'
+
+export class Ball extends Component {
 	constructor(color, radius, posX, posY, speedX, speedY) {
 		super()
 		this._color      = color

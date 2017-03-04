@@ -1,4 +1,7 @@
-class Player extends Component {
+import { Component } from './Component.js'
+import { Paddle } from './Paddle.js'
+
+export class Player extends Component {
 	constructor(width, height, color, posX, posY, speed) {
 		super()
 		this._paddle = new Paddle(width, height, color, posX, posY, speed)

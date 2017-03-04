@@ -1,4 +1,6 @@
-class EnemyPlayer extends Player {
+import { Player } from './Player.js'
+
+export class EnemyPlayer extends Player {
     constructor(width, height, color, posX, posY, speed) {
 		super(width, height, color, posX, posY, speed)
 	}

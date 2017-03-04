@@ -1,4 +1,4 @@
-class Paddle {
+export class Paddle {
 	constructor(width, height, color, posX, posY, speed) {
 		this._width   	 = width
 		this._height 	 = height

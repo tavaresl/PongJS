@@ -13,8 +13,10 @@
 </body>
 <script src="node_modules/systemjs/dist/system.js"></script>
 <script>
-	System.defaultJSExtension = true;
-	System.import('./script/build/main').catch(function (err) {
+	System.config({
+		'defaultExtension' : 'js'
+	})
+	System.import('./script/build/main.js').catch(function (err) {
 		console.log(err)
 	})
 </script>

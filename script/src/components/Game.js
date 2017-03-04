@@ -1,3 +1,8 @@
+import { World } 	   from './World.js'
+import { Ball } 	   from './Ball.js'
+import { LocalPlayer } from './LocalPlayer.js'
+import { EnemyPlayer } from './EnemyPlayer.js'
+
 export class Game {
 	constructor(canvas) {
 		this._canvas = document.querySelector('#' + canvas)
