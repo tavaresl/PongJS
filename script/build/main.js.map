@@ -1,1 +1,1 @@
-{"version":3,"sources":["../src/main.js"],"names":["game","start"],"mappings":";;AAAA;;AAEA,IAAIA,OAAO,eAAS,YAAT,CAAX;AACAA,KAAKC,KAAL","file":"main.js","sourcesContent":["import { Game } from './components/Game.js'\r\n\r\nvar game = new Game('gameCanvas')\r\ngame.start()\r\n"]}
+{"version":3,"sources":["../src/main.js"],"names":["game","start"],"mappings":";;AAAA;;AAEA,IAAIA,OAAO,eAAS,YAAT,CAAX;AACAA,KAAKC,KAAL","file":"main.js","sourcesContent":["import { Game } from './components/Game.js'\n\nvar game = new Game('gameCanvas')\ngame.start()\n"]}

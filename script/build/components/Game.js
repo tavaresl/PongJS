@@ -63,7 +63,7 @@ var Game = exports.Game = function () {
 	}, {
 		key: 'checkWinner',
 		value: function checkWinner(player) {
-			if (player.score.points == 1) {
+			if (player.score.points == 10) {
 				this._state = 2;
 				this._stop();
 				this._winner = player;
