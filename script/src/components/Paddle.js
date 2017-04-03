@@ -31,6 +31,10 @@ export class Paddle {
 		}
 	}
 
+	stop() {
+		this._speed = 0
+	}
+
 	draw(context) {
 		context.fillStyle = this._color;
 		context.fillRect(this._posX, this._posY, this._width, this._height);

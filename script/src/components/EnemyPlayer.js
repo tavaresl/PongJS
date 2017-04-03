@@ -2,7 +2,7 @@ import { Player } from './Player.js'
 
 export class EnemyPlayer extends Player {
     constructor(width, height, color, posX, posY, speed) {
-		super(width, height, color, posX, posY, speed)
+		super('Enemy', width, height, color, posX, posY, speed, posX - 100, 100)
 	}
 
 	chase(ball) {

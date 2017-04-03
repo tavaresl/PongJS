@@ -52,6 +52,11 @@ var Paddle = exports.Paddle = function () {
 			}
 		}
 	}, {
+		key: "stop",
+		value: function stop() {
+			this._speed = 0;
+		}
+	}, {
 		key: "draw",
 		value: function draw(context) {
 			context.fillStyle = this._color;

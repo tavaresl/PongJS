@@ -43,6 +43,12 @@ var Ball = exports.Ball = function (_Component) {
 			}
 		}
 	}, {
+		key: 'stop',
+		value: function stop() {
+			this._speedX = 0;
+			this._speedY = 0;
+		}
+	}, {
 		key: 'reset',
 		value: function reset() {
 			this._posX = this._initialPos.x;

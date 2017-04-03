@@ -26,6 +26,11 @@ export class Ball extends Component {
 		}
 	}
 
+	stop() {
+		this._speedX = 0
+		this._speedY = 0
+	}
+
 	reset() {
 		this._posX = this._initialPos.x
 		this._posY = this._initialPos.y

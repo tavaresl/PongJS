@@ -1,25 +1,21 @@
 import { Component } from './Component.js'
 import { Paddle } from './Paddle.js'
+import { Score } from './Score.js'
 
 export class Player extends Component {
-	constructor(width, height, color, posX, posY, speed) {
+	constructor(name, width, height, color, paddlePosX, paddlePosY, speed, scorePosX, scorePosY) {
 		super()
-		this._paddle = new Paddle(width, height, color, posX, posY, speed)
-		this._score  = 0
+		this._name 	 = name
+		this._paddle = new Paddle(width, height, color, paddlePosX, paddlePosY, speed)
+		this._score  = new Score(0, scorePosX, scorePosY)
 	}
 
-	get score()  { return this._score + 0 }
+	get name()   { return this._name + '' }
+	get score()  { return this._score }
 	get paddle() { return this._paddle }
 
-	draw(context) 	{ this.paddle.draw(context) }
-	update(context) { this.paddle.update(context) }
-
-	scoreUp(score) {
-		if (!typeof score == 'number') {
-			throw new TypeError('score must be a number')
-		}
-
-		this._score += score
+	scoreUp() {
+		this._score.scoreUp()
 	}
 
 	hasBlocked(ball) {
@@ -31,6 +27,20 @@ export class Player extends Component {
 		}
 
 		return false
+	}
+
+	stop() {
+		this._paddle.stop()
+ 	}
+
+	draw(context) 	{ 
+		this._paddle.draw(context)
+		this._score.draw(context)
+	}
+	
+	update(context) {
+		this._paddle.update(context)
+		this._score.update(context)
 	}
 
 	init() {}

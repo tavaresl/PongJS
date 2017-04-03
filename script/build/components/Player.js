@@ -5,13 +5,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Player = undefined;
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _Component2 = require('./Component.js');
 
 var _Paddle = require('./Paddle.js');
+
+var _Score = require('./Score.js');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -22,34 +22,21 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Player = exports.Player = function (_Component) {
 	_inherits(Player, _Component);
 
-	function Player(width, height, color, posX, posY, speed) {
+	function Player(name, width, height, color, paddlePosX, paddlePosY, speed, scorePosX, scorePosY) {
 		_classCallCheck(this, Player);
 
 		var _this = _possibleConstructorReturn(this, (Player.__proto__ || Object.getPrototypeOf(Player)).call(this));
 
-		_this._paddle = new _Paddle.Paddle(width, height, color, posX, posY, speed);
-		_this._score = 0;
+		_this._name = name;
+		_this._paddle = new _Paddle.Paddle(width, height, color, paddlePosX, paddlePosY, speed);
+		_this._score = new _Score.Score(0, scorePosX, scorePosY);
 		return _this;
 	}
 
 	_createClass(Player, [{
-		key: 'draw',
-		value: function draw(context) {
-			this.paddle.draw(context);
-		}
-	}, {
-		key: 'update',
-		value: function update(context) {
-			this.paddle.update(context);
-		}
-	}, {
 		key: 'scoreUp',
-		value: function scoreUp(score) {
-			if (!(typeof score === 'undefined' ? 'undefined' : _typeof(score)) == 'number') {
-				throw new TypeError('score must be a number');
-			}
-
-			this._score += score;
+		value: function scoreUp() {
+			this._score.scoreUp();
 		}
 	}, {
 		key: 'hasBlocked',
@@ -61,12 +48,34 @@ var Player = exports.Player = function (_Component) {
 			return false;
 		}
 	}, {
+		key: 'stop',
+		value: function stop() {
+			this._paddle.stop();
+		}
+	}, {
+		key: 'draw',
+		value: function draw(context) {
+			this._paddle.draw(context);
+			this._score.draw(context);
+		}
+	}, {
+		key: 'update',
+		value: function update(context) {
+			this._paddle.update(context);
+			this._score.update(context);
+		}
+	}, {
 		key: 'init',
 		value: function init() {}
 	}, {
+		key: 'name',
+		get: function get() {
+			return this._name + '';
+		}
+	}, {
 		key: 'score',
 		get: function get() {
-			return this._score + 0;
+			return this._score;
 		}
 	}, {
 		key: 'paddle',

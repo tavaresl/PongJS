@@ -2,7 +2,7 @@ import { Player } from './Player.js'
 
 export class LocalPlayer extends Player {
 	constructor(width, height, color, posX, posY, speed) {
-		super(width, height, color, posX, posY, speed)
+		super('Player', width, height, color, posX, posY, speed, posX + 100, 100)
 		this.init(window.document)
 	}
 

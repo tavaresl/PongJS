@@ -21,7 +21,7 @@ var LocalPlayer = exports.LocalPlayer = function (_Player) {
 	function LocalPlayer(width, height, color, posX, posY, speed) {
 		_classCallCheck(this, LocalPlayer);
 
-		var _this = _possibleConstructorReturn(this, (LocalPlayer.__proto__ || Object.getPrototypeOf(LocalPlayer)).call(this, width, height, color, posX, posY, speed));
+		var _this = _possibleConstructorReturn(this, (LocalPlayer.__proto__ || Object.getPrototypeOf(LocalPlayer)).call(this, 'Player', width, height, color, posX, posY, speed, posX + 100, 100));
 
 		_this.init(window.document);
 		return _this;
