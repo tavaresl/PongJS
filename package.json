@@ -5,8 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel script/src -d script/build --source-maps",
-    "watch": "babel script/src -d script/build --source-maps --watch"
+    "start": "babel script/src -d script/build --source-maps --watch"
   },
   "repository": {
     "type": "git",
