@@ -38,8 +38,7 @@ export class World extends Component {
 			this._enemy.scoreUp()
 			this._ball.reset()
 			this._notify('score', this._enemy)
-		}
-		else if (this._ball.posX > this._width - 10
+		} else if (this._ball.posX > this._width - 10
 		&& !this._enemy.hasBlocked(this._ball)) {
 			this._player.scoreUp()
 			this._ball.reset()
@@ -54,8 +53,7 @@ export class World extends Component {
 
 		if (this._ball.speedX > 0) {
 			this._enemy.chase(this._ball)
-		}
-		else {
+		} else {
 			this._enemy.stopChasing()
 		}
 	}

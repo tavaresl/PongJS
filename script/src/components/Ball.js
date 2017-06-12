@@ -20,8 +20,7 @@ export class Ball extends Component {
 	reflect(axis) {
 		if (axis == 'y') {
 			this._speedY = -this._speedY
-		}
-		else if (axis == 'x') {
+		} else if (axis == 'x') {
 			this._speedX = -this._speedX
 		}
 	}

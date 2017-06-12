@@ -15,8 +15,7 @@ export class Game {
 		if (this._state == 0) {
 			this._world.update(this.context)
 			this._draw()	
-		}
-		else if (this._state == 2) {
+		} else if (this._state == 2) {
 			this._showWinner(this._winner)
 		}
 	}

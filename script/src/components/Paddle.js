@@ -25,8 +25,7 @@ export class Paddle {
 	update(context) {
 		if (this.isMovingDown && !this.isMovingUp) {
 			this._posY += this._speed
-		}
-		else if (this.isMovingUp && !this.isMovingDown) {
+		} else if (this.isMovingUp && !this.isMovingDown) {
 			this._posY -= this._speed
 		}
 	}

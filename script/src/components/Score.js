@@ -10,17 +10,10 @@ export class Score extends Component {
 		this._multiplier = 1
 	}
 
-	get points() {
-		return this._score + 0
-	}
+	get points() { return this._score + 0 }
+	get multiplier() { return this._multiplier + 0 }
 
-	get multiplier() {
-		return this._multiplier + 0
-	}
-
-	set multiplier(multiplier) {
-		this._multiplier = multiplier
-	}
+	set multiplier(multiplier) { this._multiplier = multiplier }
 
 	scoreUp() {
 		this._score += 1 * this._multiplier

@@ -9,8 +9,7 @@ export class EnemyPlayer extends Player {
 		if (ball.posY <= this.paddle.posY + 0.25 * this.paddle.height) {
 			this.paddle.stopMovingDown()
 			this.paddle.moveUp()
-		}
-		else if(ball.posY >= this.paddle.posY + 0.75 * this.paddle.height) {
+		} else if(ball.posY >= this.paddle.posY + 0.75 * this.paddle.height) {
 			this.paddle.stopMovingUp()
 			this.paddle.moveDown()
 		}
